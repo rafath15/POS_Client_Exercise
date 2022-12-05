@@ -7,7 +7,7 @@
              xmlns:localization="clr-namespace:Retalix.Client.Presentation.Core.Localization;assembly=Retalix.Client.Presentation.Core"
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="473.697">
-    <Grid >
+    <Grid Background="White">
         <TextBlock HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    FontSize="20"
