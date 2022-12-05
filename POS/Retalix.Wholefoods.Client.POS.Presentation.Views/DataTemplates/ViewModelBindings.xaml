@@ -1,0 +1,263 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                  
+                    xmlns:views="clr-namespace:Retalix.Client.POS.Presentation.Views.Views;assembly=Retalix.Client.POS.Presentation.Views"
+                    
+                    xmlns:viewModels="clr-namespace:Retalix.Client.POS.Presentation.ViewModels.ViewModels;assembly=Retalix.Client.POS.Presentation.ViewModels"
+                    xmlns:graphicCustomerDisplayViewModels="clr-namespace:Retalix.Client.POS.Presentation.ViewModels.GraphicsCustomerDisplay.ViewModels;assembly=Retalix.Client.POS.Presentation.ViewModels.GraphicsCustomerDisplay"
+                    xmlns:wfmViews="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.Views.Views"
+                    xmlns:wfmViewModels="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels;assembly=Retalix.Wholefoods.Client.POS.Presentation.ViewModels"
+                    xmlns:ICDViewModels="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay.ViewModels;assembly=Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay"
+                    xmlns:ICDView="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay.Views;assembly=Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay"
+                    xmlns:wfmCustomerDisplayView="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.Views.Views.CustomerDisplayView"
+                    xmlns:Errors="clr-namespace:Retalix.Wholefoods.Client.POS.Presentation.Views.Views.Errors"
+                    xmlns:controls="clr-namespace:Retalix.Client.POS.Presentation.Views.Controls;assembly=Retalix.Client.POS.Presentation.Views"
+                    xmlns:LineItemOperations="clr-namespace:Retalix.Client.POS.Presentation.ViewModels.LineItemOperations;assembly=Retalix.Client.POS.Presentation.ViewModels">
+    <DataTemplate DataType="{x:Type wfmViewModels:WfmEftAmountViewModel}">
+        <views:EFTAmountView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WfmEmployeeManagementViewModel}">
+        <wfmViews:WfmEmployeeManagementView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WfmEmployeeManagementInputViewModel}">
+        <wfmViews:WfmEmployeeManagementInputView />
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type wfmViewModels:SetTokenDataForEftPaymentWaitingViewModel}">
+        <wfmViews:SetTokenDataForEftPaymentWaitingView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WfmTenderAmountActionViewModel}">
+        <views:TenderAmountView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsAgeRestrictionInputViewModel}">
+        <wfmViews:WfmCustomerAgeVerificationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsAgeRestrictionWithReasonCodeInputViewModel}">
+        <views:AgeRestrictionWithReasonCodeInputView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholefoodsItemDetailsRightViewModel}">
+        <views:ItemDetailsRightView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholefoodsItemGroupActionViewModel}">
+        <views:ItemGroupActionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:CheckIfEatInItemsViewModel}">
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PinpadDownloadExecutionViewModel}">
+        <wfmViews:PinpadDownloadExecutionView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:OriginalTransactionReceiptViewModel}">
+        <views:OriginalTransactionReceiptView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type graphicCustomerDisplayViewModels:GraphicsCustomerDisplayCashPaymentChangeViewModel}">
+        <wfmCustomerDisplayView:WfmCashPaymentChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:EcommerceOrderLookupViewModel}">
+        <wfmViews:EcommerceOrderLookupView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type wfmViewModels:EcommerceLookupCustomerDetailsViewModel}">
+        <wfmViews:EcommerceCustomerDetailsView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type wfmViewModels:EcommerceHandleInputViewModelBase}">
+        <wfmViews:EcommerceOrderLookupView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:EcommerceCustomerOrderResultsViewModel}">
+        <wfmViews:EcommerceCustomerOrderResults />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholefoodsScanGiftCardForRefundViewModel}">
+        <views:ScanGiftCardForRefundView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsItemPostSalePriceOverrideViewModel}">
+        <views:ItemPriceOverrideView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type wfmViewModels:WholefoodsConfirmDefaultTenderForRefundViewModel}">
+        <views:ConfirmDefualtTenderForRefundView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholefoodsSwitchTenderViewModel}">
+        <views:SwitchRefundTenderView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:InvalidQuantityErrorViewModel}">
+        <Errors:InvalidQuantityView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsLineDetailsViewModel}">
+        <views:LineDetailsView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:CustomerViewModel}">
+        <wfmViews:WfmCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsSearchCustomerViewModel}">
+        <wfmViews:WholefoodsSearchCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsYesNoViewModel}">
+        <views:YesNoView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type LineItemOperations:QuantityPastOperation}">
+        <controls:UCQuantityPastOperation Visibility="Collapsed" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:GraphicsCustomerDisplayBalanceInqueryViewModel}">
+        <wfmCustomerDisplayView:WfmCustomerDisplayBalanceInqueryView />
+
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:TenderAmountRestrictionReachedViewModel}">
+        <Errors:WfmTenderAmountRestrictionReachedView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsBalanceInqueryViewModel}">
+        <views:InformativeMessageView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsStoreAccountViewModel}">
+        <wfmViews:WfmStroreAccountView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:PrintlessCashPaymentChangeViewModel}">
+        <wfmViews:WfmCashPaymentChangeView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type viewModels:ProcessedByAtmCashPaymentChangeViewModel}">
+        <wfmViews:WfmCashPaymentChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsRefundPaymentViewModel}">
+        <wfmViews:WfmRefundPaymentView></wfmViews:WfmRefundPaymentView>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsInteractiveCustomerDisplayRefundPaymentViewModel}">
+        <wfmCustomerDisplayView:WfmRefundPaymentView></wfmCustomerDisplayView:WfmRefundPaymentView>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsCustomerLookupSummaryViewModel}">
+        <wfmViews:WfmCustomerLookupSummaryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:SignatureCapturePromptViewModel}">
+        <wfmViews:SignatureCapturePromptView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsReturnTransactionByEftWaitingViewModel}">
+        <views:ReturnTransactionByEFTWaitingView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsTransactionLookupByCardViewModel}">
+        <views:SearchTransactionByEFTView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsCashPaymentChangeViewModel}">
+        <wfmViews:WfmCashPaymentChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsNoChangeViewModel}">
+        <views:NoChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsGiftReceiptPrintViewModel}">
+        <views:NoChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeFreeTrialCashierViewModel}">
+        <wfmViews:PrimeFreeTrialCashierView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeFreeTrialCashierViewModelV4}">
+        <wfmViews:PrimeFreeTrialCashierViewV4 />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeFreeTrialCustomerViewModel}">
+        <wfmViews:PrimeFreeTrialCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeFreeTrialCustomerViewModelV4}">
+        <wfmViews:PrimeFreeTrialCustomerViewV4 />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeSmsOfferCashierViewModel}">
+        <wfmViews:PrimeSmsOfferCashierView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:PrimeSmsOfferCustomerViewModel}">
+        <wfmViews:PrimeSmsOfferCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type ICDViewModels:CustomerDisplayRatingViewModel}">
+        <ICDView:CustomerDisplayRatingView />
+    </DataTemplate>
+
+ 
+
+    <DataTemplate DataType="{x:Type ICDViewModels:AllCustomerExperienceViewModel}">
+        <ICDView:AllRatingSubViews />
+    </DataTemplate>
+
+
+
+    <DataTemplate DataType="{x:Type ICDViewModels:ICDCustomerViewModel}">
+        <ICDView:ICDCustomerView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type ICDViewModels:CustomerPpsMessageViewModel}">
+        <ICDView:CustomerPpsMessageView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsDepartmentLookupSaleViewModel}">
+        <views:GetItemForDepartmentQueryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsDepartmentLookupNoSaleViewModel}">
+        <views:GetItemForDepartmentQueryView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:WholeFoodsPrintlessCashPaymentChangeViewModel}">
+        <views:NoChangeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:CashierPPSTenderModeNotificationViewModel}">
+        <wfmViews:CashierPPSTenderModeNotificationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:AmazonOneCustomerAddingNotificationViewModel}">
+        <wfmViews:AmazonOneCustomerAddingNotificationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:EftLoyaltyCombinedErrorNotificationViewModel}">
+        <wfmViews:EftLoyaltyCombinedErrorNotificationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:SurveyMessageViewModel}">
+        <wfmViews:OptionSelectionInformationView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type wfmViewModels:TareContainersViewModel}">
+        <wfmViews:TareContainersView />
+    </DataTemplate>
+
+    <ICDViewModels:AllCustomerExperienceViewModel x:Key="AllCustomerExperienceViewModel"/>
+
+    
+    
+    <ICDViewModels:ICDCustomerViewModel x:Key="ICDCustomerViewModel"/>
+
+    <ICDViewModels:CustomerPpsMessageViewModel x:Key="CustomerPpsMessageViewModel"/>
+</ResourceDictionary>

@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewNavigationRules touchPointType="POS"
+                     display="MainDisplay">
+  <StateToViews>
+
+
+    <State name="NoSaleMode">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.MainPosRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodNoSaleModeViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsLineDetailsViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ReceiptControlViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ItemDetailsRightViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+	 
+    <State name="NoSaleMode_YesNo">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsYesNoViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="SaleMode">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.MainPosRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.SaleModeViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.LineDetailsViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ReceiptControlViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsItemDetailsRightViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ItemGroup_Sale">
+      <ToView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ItemGroupViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ItemGroupInfoViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsItemGroupActionViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ItemGroup_Modification">
+      <ToView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ItemGroupViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ItemGroupInfoViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsItemGroupModificationViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="AutoManualTareWeightModificationEntryState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsManualTareWeightModificationViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.ManualTareWeightMidificationView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="ManualTareWeightModificationEntryState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsManualTareWeightModificationViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.ManualTareWeightMidificationView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="CheckIfEatInItems">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.CheckIfEatInItemsViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="NoEatInItems">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.NoEatInItemsViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="EatInState">
+      <ToView viewName="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.MainPosViewWithDisabledKeyPad"
+               viewAssemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views"
+        name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EatInViewModel"
+               assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.EatInHeaderView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.EatInView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="PinpadDownloadExecutionMessage">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.PinpadDownloadExecutionViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="SignLoginMode">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.PosLoginRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.SignInLoginModeViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="MenuCommandsRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.LoginMenuViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="SubViewBottom"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WholefoodsLoginModeView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="SubViewTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.PosDetailsViewLogin"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="WelcomeScreenForgotPasswordScreen">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.PosLoginRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.WelcomeScreenForgotPasswordViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="SubViewBottom"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WfmLoginLoadingAnimation"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="SubViewTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.PosDetailsViewLogin"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="WelcomeScreen">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.PosLoginRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.WelcomeScreenViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="SubViewBottom"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WfmLoginLoadingAnimation"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="SubViewTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.PosDetailsViewLogin"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="ReturnTransactionSaleMode_WithSelection">
+      <ToView	viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.MainPosRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.TransactionBasedReturnSelectionViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.TransactionBasedReturnLineDetailsViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.TransactionBasedReturnSelectionView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ShowOriginalTransaction">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.MainPosRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.OriginalTransactionReceiptViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.OriginalTransactionLineDetailsView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.OriginalTransactionReceiptView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.DisabledItemDetailsRightViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="EcommerceLookupState">
+      <ToView      assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceOrderLookupViewModel" >
+
+        <ToSubView assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.EcommerceItemInformationLabelView" />
+
+        <ToSubView assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceOrderLookupViewModel" regionName="LeftRegion" />
+
+        <ToSubView regionName="RightRegionBottom" name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                  assemblyName="Retalix.Client.POS.Presentation.ViewModels"/>
+      </ToView>
+    </State>
+
+    <State name="EcommerceSearchByCustomerDetails">
+
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceHandleInputViewModelBase" assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.EcommerceItemInformationLabelView" assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views"/>
+        <ToSubView  regionName="LeftRegion" name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceLookupCustomerDetailsViewModel"
+                    assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom" name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels"/>
+      </ToView>
+    </State>
+
+    <State name="ExecuteCustomerOrderSearchResults">
+
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceHandleInputViewModelBase" assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.EcommerceItemInformationLabelView" assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views"/>
+        <ToSubView  regionName="LeftRegion" name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EcommerceCustomerOrderResultsViewModel"
+                    assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom" name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels"/>
+      </ToView>
+    </State>
+
+    <State name="InvalidQuantity">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.InvalidQuantityErrorViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="ItemPostPriceOverrideMode">
+      <ToView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.PriceOverrideViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.LineDetailsViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsItemPostSalePriceOverrideViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ScanGiftCardForRefund">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsScanGiftCardForRefundViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.ScanGiftCardForRefundView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="Refund_ConfirmDefualtMode">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsConfirmDefaultTenderForRefundViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="Refund_SwitchTender">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsSwitchTenderViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="PromptForTaxExemptionInfoState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsGetTaxExemptionInfoViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.SelectTaxesForExemptionRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WfmGetTaxExemptionInfoView"
+                   regionName="LeftRegion"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="WhyDidntGetDetailsState">
+      <ToView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.WhyDidntGetPromotionDetailsViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView  name="Retalix.Client.POS.Presentation.Views.Views.GetWhyDidntGetPromotionView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WhyDidntGetPromotionDetailsView"
+                    assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="PreEftGeneralWaitingMode">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsEftWaitingTenderViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.PreEftGeneralWaitingViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="PreEftGeneralWaitingMode_CustomerDeposit">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsEftWaitingTenderViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.PreEftGeneralWaitingViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="PreGiftCardWaitingMode">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsEftWaitingTenderViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.PreEftGeneralWaitingViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="GiftReceiptError">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsGiftReceiptErrorViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="ScanInBarcodeForOnlineItemViewModel">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsScanInBarcodeForOnlineItemViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.ScanInBarcodeForOnlineItemView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="OnlineItemScanLongBarcodeState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsScanInBarcodeForOnlineItemViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.ScanInBarcodeForOnlineItemView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+
+    <State name="CustomerDisplayBalanceInqueryState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsBalanceInqueryViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="OnlineItemSwipeCard">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsSwipeCardForOnlineItemsViewModel"
+					assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+               name="Retalix.Client.POS.Presentation.Views.Views.SwipeCardForOnlineItemsView"
+						   assemblyName="Retalix.Client.POS.Presentation.Views"/>
+        <ToSubView regionName="RightRegionBottom"
+						   name="Retalix.Client.POS.Presentation.ViewModels.Fuel.ViewModels.FuelPLUSubCategoryViewModel"
+						   assemblyName="Retalix.Client.POS.Presentation.ViewModels.Fuel"/>
+        <ToSubView regionName="FuelActionRegion"
+						   name="Retalix.Client.POS.Presentation.Views.Fuel.Controls.ActionViewExpanded"
+						   assemblyName="Retalix.Client.POS.Presentation.Views.Fuel"/>
+        <ToSubView regionName="FuelEJRegion"
+						   name="Retalix.Client.POS.Presentation.ViewModels.Fuel.ViewModels.FuelReceiptControlViewModel"
+						   assemblyName="Retalix.Client.POS.Presentation.ViewModels.Fuel"/>
+      </ToView>
+    </State>
+
+    <State name="WholeFoodsRefundSecond_EftWaiting">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsEFTRefundSecondWaitingViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.EFTWaitingView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="TopUpMode">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsTopUpViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.ControlRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.TopUpView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="AddPromotionGiftCards_OnlineItemScanLongBarcodeState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsScanInBarcodeForOnlineItemViewModel"
+               assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.ScanInBarcodeForOnlineItemView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="AddPromotionGiftCards_OnlineItemSwipeCard">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsSwipeCardForOnlineItemsViewModel"
+           assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="LeftRegion"
+               name="Retalix.Client.POS.Presentation.Views.Views.SwipeCardForOnlineItemsView"
+						   assemblyName="Retalix.Client.POS.Presentation.Views"/>
+        <ToSubView regionName="RightRegionBottom"
+						   name="Retalix.Client.POS.Presentation.ViewModels.Fuel.ViewModels.FuelPLUSubCategoryViewModel"
+						   assemblyName="Retalix.Client.POS.Presentation.ViewModels.Fuel"/>
+        <ToSubView regionName="FuelActionRegion"
+						   name="Retalix.Client.POS.Presentation.Views.Fuel.Controls.ActionViewExpanded"
+						   assemblyName="Retalix.Client.POS.Presentation.Views.Fuel"/>
+        <ToSubView regionName="FuelEJRegion"
+						   name="Retalix.Client.POS.Presentation.ViewModels.Fuel.ViewModels.FuelReceiptControlViewModel"
+						   assemblyName="Retalix.Client.POS.Presentation.ViewModels.Fuel"/>
+      </ToView>
+    </State>
+
+    <State name="SelectHouseAccount_TenderAdd">
+      <ToView name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.TenderAmountViewModel"
+              assemblyName="Retalix.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                  name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsStoreAccountViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="SearchCustomerState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsSearchCustomerViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="SearchCustomerNoSaleState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsSearchCustomerViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="LockScreen">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.PosLoginRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsLockViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="SubViewBottom"
+                   name="Retalix.Client.POS.Presentation.Views.Views.LockView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="SubViewTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.PosDetailsViewLogin"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="CashPaymentMode_LockScreen">
+      <ToView viewName="Retalix.Client.POS.Presentation.Views.RegionContainerViews.PosLoginRegionContainerView"
+              viewAssemblyName="Retalix.Client.POS.Presentation.Views"
+              name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsLockViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView regionName="SubViewBottom"
+                   name="Retalix.Client.POS.Presentation.Views.Views.LockView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="SubViewTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.PosDetailsViewLogin"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="CustomerLookupSummaryState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsCustomerLookupSummaryViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="CustomerLookupSummaryNoSaleState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsCustomerLookupSummaryViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="ReturnTransactionByEFTWaitingState_TBR">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsReturnTransactionByEftWaitingViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.ControlRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.ReturnTransactionByEFTWaitingView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ReprintTransactionByCardState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsTransactionLookupByCardViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.ControlRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.SearchTransactionByEFTView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="GiftReceiptGetTransactionByEFTState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsGiftReceiptTransactionByEFTWaitingViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.GiftReceiptGetTransactionByEFTView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.ControlRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ReturnAllTransactionByEFTWaitingState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsReturnAllTransactionByEFTWaitingViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.ControlRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.ReturnTransactionByEFTWaitingView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="TransactionBasedReturnSearchTrasnactionOptionsState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholefoodsTransactionBasedReturnSearchOptionsViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.RePrintRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TransactionBasedSearchTransactionOptionsView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="GiftReceiptTransactionSearchOptions">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsGiftReceiptTransactionSearchOptionsViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.RePrintRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TransactionBasedSearchTransactionOptionsView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="RePrintTransactionSearchOptionsMode">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsReprintTransactionSearchOptionsViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.RePrintRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.RePrintTransactionSearchOptionsView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="ReturnAllTransactionSearchOptionsState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsReturnAllTransactionSearchOptionsViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.RePrintRightView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TransactionBasedSearchTransactionOptionsView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+    
+    <State name="CashPaymentMode_Change">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsCashPaymentChangeViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="NoChangeMode">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsNoChangeViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+    
+    <State name="GiftReceiptPrint">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsGiftReceiptPrintViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="PrimeFreeTrialState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.PrimeFreeTrialCashierViewModel"
+                 assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+
+    </State>
+
+    <State name="PrimeFreeTrialV4State">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.PrimeFreeTrialCashierViewModelV4"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="PrimeSmsOfferState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.PrimeSmsOfferCashierViewModel"
+                 assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+
+    </State>
+
+    <State name="SaleMode_LookupDepartmentState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsDepartmentLookupSaleViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView  name="Retalix.Client.POS.Presentation.Views.Views.GetItemForDepartmentQueryView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.DepartmentLookupView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="NoSaleMode_LookupDepartmentState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsDepartmentLookupNoSaleViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView  name="Retalix.Client.POS.Presentation.Views.Views.GetItemForDepartmentQueryView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView  regionName="LeftRegion"
+                    name="Retalix.Client.POS.Presentation.Views.Views.DepartmentLookupView"
+                    assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionBottom"
+                   name="Retalix.Client.POS.Presentation.ViewModels.ViewModels.ConsumableGroupViewModel"
+                   assemblyName="Retalix.Client.POS.Presentation.ViewModels" />
+      </ToView>
+    </State>
+
+    <State name="CashPaymentMode_Change_WithoutPrintReceipts">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsPrintlessCashPaymentChangeViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="TareContainersScreenState">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.TareContainersViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+
+    <State name="EftSetTokenDataForPaymentWaiting">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.SetTokenDataForEftPaymentWaitingViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.SetTokenDataForEftPaymentWaitingView"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="TenderAmountMode">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WfmTenderAmountViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WfmTenderAmountActionViewModel"
+                   assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="EFT_PaymentAmountState">
+      <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WfmEftAmountViewModel"
+              assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels">
+        <ToSubView name="Retalix.Client.POS.Presentation.Views.Views.TenderView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="LeftRegion"
+                   name="Retalix.Client.POS.Presentation.Views.Views.EFTAmountView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+        <ToSubView regionName="RightRegionTop"
+                   name="Retalix.Client.POS.Presentation.Views.Views.TenderGroupMenuView"
+                   assemblyName="Retalix.Client.POS.Presentation.Views" />
+      </ToView>
+    </State>
+
+    <State name="RefundPaymentMode">
+      <ToWindow name="Retalix.Client.POS.Presentation.Views.Windows.TransparentWindow"
+                assemblyName="Retalix.Client.POS.Presentation.Views"
+                cacheMode="false">
+        <ToView name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsRefundPaymentViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+      </ToWindow>
+    </State>
+	  <State name="WfmEmployeeManagementInput">
+		  <ToView viewName="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WfmEmployeeManagementInputView"
+		          viewAssemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views"
+		          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WfmEmployeeManagementInputViewModel"
+		          assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" >
+		  </ToView>
+	  </State>
+
+	  <State name="WfmEmployeeManagementLookUp">
+		  <ToView viewName="Retalix.Wholefoods.Client.POS.Presentation.Views.Views.WfmEmployeeManagementView"
+		          viewAssemblyName="Retalix.Wholefoods.Client.POS.Presentation.Views"
+		          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WfmEmployeeManagementViewModel"
+		          assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+	  </State>
+
+  </StateToViews>
+
+  <Views>
+
+    <View id="EPSSignatureCapturePrompt"
+          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.SignatureCapturePromptViewModel"
+                assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+    
+    <View id="CustomerAgeWithOptionalDateInput"
+        name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.WholeFoodsAgeRestrictionInputViewModel"
+        assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+
+    <View id="CashierPPSTenderModeNotification"
+          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.CashierPPSTenderModeNotificationViewModel"
+          assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+
+    <View id="AmazonOneCustomerAddingNotification"
+          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.AmazonOneCustomerAddingNotificationViewModel"
+          assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+
+    <View id="ExperiencePromptView"
+               name="Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay.Views.ExperiencePromptView"
+               assemblyName="Retalix.Wholefoods.Client.POS.Presentation.InteractiveCustomerDisplay"
+               regionName="SubView"/>
+
+    <View id="EftLoyaltyCombinedErrorNotification"
+          name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.EftLoyaltyCombinedErrorNotificationViewModel"
+          assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+    
+  <View id="OptionSelectionInformationView"
+           name="Retalix.Wholefoods.Client.POS.Presentation.ViewModels.ViewModels.SurveyMessageViewModel"
+           assemblyName="Retalix.Wholefoods.Client.POS.Presentation.ViewModels" />
+
+  </Views>
+
+</ViewNavigationRules>

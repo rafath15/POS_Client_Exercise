@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExtensionNavigationRules touchPointType="POS">
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>PaymentAbortedByBRM</FromOutcome>
+      <ToState>LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>FraudEvaluationNotSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EFT_PaymentAmountState</FromState>
+    <NavigationCase>
+      <FromOutcome>FraudEvaluationSuccess</FromOutcome>
+      <ToState>EftSetTokenDataForPaymentWaiting</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>FraudEvaluationSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerOptOutSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerOptOutFailed</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EFTPaymentProcessMode</FromState>
+    <NavigationCase>
+      <FromOutcome>GetPaymentOptionsSuccess</FromOutcome>
+      <ToState>TenderMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EftSetTokenDataForPaymentWaiting</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_PaymentAmountState</FromOutcome>
+      <ToState>EFTPaymentProcessMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EFT_PaymentAmountState</FromState>
+    <NavigationCase>
+      <FromOutcome>EftSetTokenDataForPaymentWaiting</FromOutcome>
+      <ToState>EftSetTokenDataForPaymentWaiting</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>EftSetTokenDataForPaymentWaiting</FromOutcome>
+      <ToState>EftSetTokenDataForPaymentWaiting</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderAmountMode</FromState>
+    <NavigationCase>
+      <FromOutcome>EftSetTokenDataForPaymentWaiting</FromOutcome>
+      <ToState>EftSetTokenDataForPaymentWaiting</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>EftSetTokenDataForPaymentWaiting</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Refund_SwitchTender</FromState>
+    <NavigationCase>
+      <FromOutcome>FinishTransactionSuccess</FromOutcome>
+      <ToState>RefundPaymentMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>FinishTransactionSuccess</FromOutcome>
+      <ToState>CashPaymentMode_Change</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CashPaymentMode_LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>TransactionClosed</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CashPaymentMode_LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>Unlock</FromOutcome>
+      <ToState>NoSaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>RePrintTransactionSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CashPaymentMode_Change</FromState>
+    <NavigationCase>
+      <FromOutcome>Unlock</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Refund_SwitchTender</FromState>
+    <NavigationCase>
+      <FromOutcome>TransactionEnded</FromOutcome>
+      <ToState>RefundPaymentMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>GoToTenderMode</FromOutcome>
+      <ToState>LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>EFTPaymentProcessMode</FromOutcome>
+      <ToState>LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>AutoManualTareWeightModificationEntryState</FromOutcome>
+      <ToState>AutoManualTareWeightModificationEntryState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>AutoManualTareWeightModificationEntryState</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>AutoManualTareWeightModificationEntryState</FromState>
+    <NavigationCase>
+      <FromOutcome>LineItemAddWithLinkedItemBRMFailed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ManualTareWeightEntryState</FromState>
+    <NavigationCase>
+      <FromOutcome>LineItemAddWithLinkedItemBRMFailed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ManualTareWeightModificationEntryState</FromState>
+    <NavigationCase>
+      <FromOutcome>LineItemAddWithLinkedItemBRMFailed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>EatIn</FromOutcome>
+      <ToState>CheckIfEatInItems</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>EatInState</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CheckIfEatInItems</FromState>
+    <NavigationCase>
+      <FromOutcome>Success</FromOutcome>
+      <ToState>EatInState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CheckIfEatInItems</FromState>
+    <NavigationCase>
+      <FromOutcome>Failed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>Failed</FromOutcome>
+      <ToState>@</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>Success</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>SuccessApplyEatIn</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>FailedApplyEatIn</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>StartPinpadDownloadExecution</FromOutcome>
+      <ToState>PinpadDownloadExecutionMessage</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>PinpadDownloadExecutionMessage</FromState>
+    <NavigationCase>
+      <FromOutcome>PinpadDownloadExecuteSuccess</FromOutcome>
+      <ToState>..</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Login</FromState>
+    <NavigationCase>
+      <FromOutcome>PinpadDownloadExecuteSuccess</FromOutcome>
+      <ToState>@</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>Lookup</FromOutcome>
+      <ToState>EcommerceLookupState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EcommerceLookupState</FromState>
+    <NavigationCase>
+      <FromOutcome>SearchByCodeFailure</FromOutcome>
+      <ToState>SearchItemNotFound</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EcommerceLookupState</FromState>
+    <NavigationCase>
+      <FromOutcome>EcommerceSearchByLoaylty</FromOutcome>
+      <ToState>EcommerceSearchByLoaylty</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EcommerceLookupState</FromState>
+    <NavigationCase>
+      <FromOutcome>EcommerceSearchByCustomerDetails</FromOutcome>
+      <ToState>EcommerceSearchByCustomerDetails</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>EcommerceLookupState</FromState>
+    <NavigationCase>
+      <FromOutcome>ExecuteCustomerOrderSearchResults</FromOutcome>
+      <ToState>ExecuteCustomerOrderSearchResults</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EcommerceSearchByCustomerDetails</FromState>
+    <NavigationCase>
+      <FromOutcome>ExecuteCustomerOrderSearchResults</FromOutcome>
+      <ToState>ExecuteCustomerOrderSearchResults</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>InvalidQuantity</FromOutcome>
+      <ToState>InvalidQuantity</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>InvalidQuantity</FromState>
+    <NavigationCase>
+      <FromOutcome>InvalidQuantity</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+  
+  <NavigationRule>
+    <FromState>InvalidQuantity</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ReturnItem_GetItemToReturnFailure_ScaleErrorState</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseViewToNoSaleMode</FromOutcome>
+      <ToState>GetItemToReturnState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SearchView_ScaleError</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>..\..</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleMode</FromState>
+    <NavigationCase>
+      <FromOutcome>GiftReceiptReturn</FromOutcome>
+      <ToState>GiftReceiptReturnState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>GiftReceiptReturn</FromOutcome>
+      <ToState>GiftReceiptError</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Refund_EftWaiting</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>..\..</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Refund_SwitchTender</FromState>
+    <NavigationCase>
+      <FromOutcome>Refund_EftWaiting</FromOutcome>
+      <ToState>WholeFoodsRefundSecond_EftWaiting</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyCateringTransactionSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerDisplayBalanceInquery</FromOutcome>
+      <ToState>CustomerDisplayBalanceInqueryState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CustomerDisplayBalanceInqueryState</FromState>
+    <NavigationCase>
+      <FromOutcome>BalanceInqueryOutcome</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyCateringTransactionFailed</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>BRMErrorMode</FromOutcome>
+      <ToState>TenderMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>OnlineItemSwipeCard</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TopUpMode</FromState>
+    <NavigationCase>
+      <FromOutcome>BRMErrorMode</FromOutcome>
+      <ToState>TopUpMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TopUpMode</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderAmountMode</FromState>
+    <NavigationCase>
+      <FromOutcome>SetTenderMode</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>SetTenderMode</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>Refund_SwitchTender</FromState>
+    <NavigationCase>
+      <FromOutcome>StartEPSPaymentFailed</FromOutcome>
+      <ToState>Refund_SwitchTender</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>Refund_ConfirmDefualtMode</FromState>
+    <NavigationCase>
+      <FromOutcome>StartEPSPaymentFailed</FromOutcome>
+      <ToState>Refund_ConfirmDefualtMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>HouseAccountTenderSelect</FromOutcome>
+      <ToState>SelectHouseAccount_TenderAdd</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>OnlineItemBalanceInqueryFailed</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>OnlineItemBalanceInqueryFailed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>StartEPSPaymentFailed</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>PaymentNotAllowed</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ReturnTransaction_LookupDepartmentState_WithSelection</FromState>
+    <NavigationCase>
+      <FromOutcome>GetItemToReturnFailure_ScaleError</FromOutcome>
+      <ToState>ReturnTransactionSaleMode_WithSelection</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ReturnTransactionSaleMode_WithSelection</FromState>
+    <NavigationCase>
+      <FromOutcome>ReturnTransactionBasedBeginSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ReturnTransaction_LookupDepartmentState_WithSelection</FromState>
+    <NavigationCase>
+      <FromOutcome>ReturnUnitsInCurrentTransactionGreaterThanPurchase</FromOutcome>
+      <ToState>..</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+
+  <NavigationRule>
+    <FromState>ItemAlreadyWasScannedErrorState</FromState>
+    <NavigationCase>
+      <FromOutcome>ReturnTransactionBasedBeginSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>TransactionEnded</FromOutcome>
+      <ToState>CashPaymentMode_LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleEnterItemToQuery</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+  <NavigationRule>
+    <FromState>SearchCustomerNoSaleState</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SearchCustomerState</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>\</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>PrimeSmsOffer</FromOutcome>
+      <ToState>PrimeSmsOfferState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>PrimeSmsOfferState</FromState>
+    <NavigationCase>
+      <FromOutcome>LineItemAddWithLinkedItemSuccess</FromOutcome>
+      <ToState>PrimeSmsOfferState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>PrimeSmsOfferState</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>PrimeSmsOfferState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SignLoginMode</FromState>
+    <NavigationCase>
+      <FromOutcome>VoidEmptyTransaction</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleMode</FromState>
+    <NavigationCase>
+      <FromOutcome>VoidEmptyTransaction</FromOutcome>
+      <ToState>NoSaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleMode_ItemNotFound</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>NoSaleMode_ItemNotFound</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>ReprintTransactionSelectionState</FromState>
+    <NavigationCase>
+      <FromOutcome>FailedToFindTransactionLog</FromOutcome>
+      <ToState>GiftReceiptErrorState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleMode_LookupDepartmentState</FromState>
+    <NavigationCase>
+      <FromOutcome>DepartmentSale_Sale</FromOutcome>
+      <ToState>DepartmentSale_NoSale</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SaleMode_PriceEntryRequired</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SaleMode_PriceVerifyRequired</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>DepartmentSale_NoSale</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>SaleModeReturnItem_LookupDepartmentState</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>CustomerDisplayBalanceInqueryState</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>OnlineItemBalanceInqueryState</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>PrimeFreeTrial</FromOutcome>
+      <ToState>PrimeFreeTrialState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>PrimeFreeTrialV4</FromOutcome>
+      <ToState>PrimeFreeTrialV4State</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>PrimeFreeTrialSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>PrimeSmsOfferSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>ViewFullTerms</FromOutcome>
+      <ToState>ViewFullTermsState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>ViewFullTermsV4</FromOutcome>
+      <ToState>ViewFullTermsV4State</ToState>
+    </NavigationCase>
+  </NavigationRule>
+  
+  <NavigationRule>
+    <FromState>TopUpMode</FromState>
+    <NavigationCase>
+      <FromOutcome>ApplyEatInSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>OnlineItemActivationFailed</FromOutcome>
+      <ToState>LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSaleMode</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_LoyaltyCombinedCardIdentified</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_LoyaltyCombinedCardIdentified</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_LoyaltyCombinedCardIdentified</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EftCardApplicationWaiting</FromState>
+    <NavigationCase>
+      <FromOutcome>ConfirmLoyaltyAsTender</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>EftCardApplicationWaiting</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>ConfirmLoyaltyAsTender</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TenderMode</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_LoyaltyCombinedError</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>EFT_LoyaltyCombinedError</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>PreEftGeneralTenderWaitingOutcome</FromOutcome>
+      <ToState>LockScreen</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TareContainersScreenState</FromState>
+    <NavigationCase>
+      <FromOutcome>TareContainersScreen</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+  
+  <NavigationRule>
+    <FromState>*</FromState>
+    <NavigationCase>
+      <FromOutcome>TareContainersScreen</FromOutcome>
+      <ToState>TareContainersScreenState</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>TareContainersScreenState</FromState>
+    <NavigationCase>
+      <FromOutcome>CloseView</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>PrimeFreeTrialV4State</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>PrimeSmsOfferState</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+	<NavigationRule>
+    <FromState>ViewFullTermsV4State</FromState>
+    <NavigationCase>
+      <FromOutcome>CustomerAddSuccess</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+	
+	<NavigationRule>
+		<FromState>NoSaleMode</FromState>
+		<NavigationCase>
+			<FromOutcome>SaleMode</FromOutcome>
+			<ToState>SaleMode</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+	<NavigationRule>
+		<FromState>NoSaleMode_ScaleError</FromState>
+		<NavigationCase>
+			<FromOutcome>SaleMode</FromOutcome>
+			<ToState>SaleMode</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+  <NavigationRule>
+    <FromState>NoSalePriceQuery</FromState>
+    <NavigationCase>
+      <FromOutcome>SaleMode</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+  
+  <NavigationRule>
+    <FromState>PriceQueryLineItemAdd_ScaleError</FromState>
+    <NavigationCase>
+      <FromOutcome>SaleMode</FromOutcome>
+      <ToState>SaleMode</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+  <NavigationRule>
+    <FromState>LockScreen</FromState>
+    <NavigationCase>
+      <FromOutcome>LineItemAddSuccess</FromOutcome>
+      <ToState>*</ToState>
+    </NavigationCase>
+  </NavigationRule>
+
+	<NavigationRule>
+		<FromState>NoSaleMode</FromState>
+		<NavigationCase>
+			<FromOutcome>WfmEmployeeManagementInputOutcome</FromOutcome>
+			<ToState>WfmEmployeeManagementInput</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+
+
+	<NavigationRule>
+		<FromState>WfmEmployeeManagementInput</FromState>
+		<NavigationCase>
+			<FromOutcome>WfmEmployeeManagementLookupOutcome</FromOutcome>
+			<ToState>WfmEmployeeManagementLookUp</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+
+
+	<NavigationRule>
+		<FromState>WfmEmployeeManagementLookUp</FromState>
+		<NavigationCase>
+			<FromOutcome>WfmEmployeeManagementBackOutcome</FromOutcome>
+			<ToState>NoSaleMode</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+
+	<NavigationRule>
+		<FromState>WfmEmployeeManagementInput</FromState>
+		<NavigationCase>
+			<FromOutcome>WfmEmployeeManagementBackOutcome</FromOutcome>
+			<ToState>NoSaleMode</ToState>
+		</NavigationCase>
+	</NavigationRule>
+
+
+
+
+
+</ExtensionNavigationRules>
